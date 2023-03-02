@@ -1,0 +1,189 @@
+{% include "header.html" %}
+<div class="container">
+
+  {% include "navbar.html" %}
+
+  <div class="row">
+
+    <div class="col_12 col_md_5 col_lg_4 shop_item_lside">
+      <a href="{{store.url}}?subid1={{store._id}}&subid2=1" rel="nofollow" target="_blank" title="{{langs.goto_shop}} {{store.name}}"><img class="shop_logo" src="/img/stores/{{store.picture}}"></a>
+      <div class="shop_cashback_info">
+        {{langs.cashback}}
+        {% if store.discount_cashback %}
+        <strong><del>{{store.cashback}}</del> {{store.discount_cashback}}</strong>
+        {% else %}
+        <strong>{{store.cashback}}</strong>
+        {% endif %}
+      </div>
+      {% if user && user.noverified===undefined %}
+      <a href="{{store.url}}?subid={{user._id}}&subid1={{store._id}}&subid2=1" rel="nofollow" target="_blank" id="goTo" class="btn shop_buy {% if isActivated %}btn_success activated{% else %}btn_danger{% endif %}">{{langs.buy_with_cashback}}<strong><br>{{langs.cashback_is_activated_short}}</strong></a>
+      {% else %}
+      <a href="{{store.url}}?subid1={{store._id}}&subid2=1" rel="nofollow" target="_blank" class="btn btn_danger shop_buy">{{langs.goto_shop}}</a>
+      <div id="infoBar" class="infobar yellow fixed show"><b>{{langs.attention}}</b> {{langs.info_auth_for_get_cashback}}</div>
+      {% endif %}
+      <div class="shop_mini_info">{{langs.can_depend_on_product}}</div>
+
+      <div class="shop_conditions">
+        <h5><i class="fa fa-info-circle"></i> {{langs.cashback_conditions}}</h5>
+
+        <div class="shop_cond_item">
+          <div class="shop_cond_item_img">
+            <img src="/img/icon_time.svg">
+          </div>
+          <div class="shop_cond_item_cont">
+            <strong>{{langs.cashback_deadline}}:</strong><br>
+            {{langs.average_time}} <strong>{{store.average_time}} {{langs.days}}</strong><br>
+            {{langs.maximal_time}} <strong>{{store.max_time}} {{langs.days}}</strong>
+          </div>
+        </div>
+
+        <div class="shop_cond_item">
+          <div class="shop_cond_item_img">
+            <img src="/img/icon_location.svg">
+          </div>
+          <div class="shop_cond_item_cont">
+            <strong>{{langs.in_which_countries}}:</strong><br>
+            {{langs.cashback_available_buyers_from}}<br>
+            <strong>{% if store.countries === "all" %}{{langs.from_all_countries}}{% else %}{{store.countries}}{% endif %}</strong>
+          </div>
+        </div>
+
+<!--
+<div class="shop_conditions">
+<div class="shop_cond_item_cont">
+<div align="center"><a href="{{store.url}}?subid1={{store._id}}&subid2=1" rel="nofollow" target="_blank" title="Личный кабинет {{store.name}}" class="btn btn_success shop_buy">Сайт {{store.name}}</a></div>
+</div>
+</div>
+-->
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+
+    <div class="col_12 col_md_7 col_lg_8 shop_item_rside">
+
+      <h1 class="shop_item_title"><i class="fa fa-shopping-cart"></i> {{langs.shop_title_1}} {{store.name}} {{langs.shop_title_2}}</h1>
+      {% include "noverified.html" %}
+
+
+
+
+
+
+      {% if relPromocodes %}
+      <div class="shop_related_shops">
+        <h3>{{langs.hot_deals}}</h3>
+        <div class="row shops_list">
+
+          {% for relPromocode in relPromocodes %}
+            <div class="row product_item promocode">
+              <div class="col_4 col_md_3 product_image" style="display: flex;align-items: center;">
+                <a href="/promocode?id={{relPromocode._id}}"><img src="{{relPromocode.logo}}" title="{{relPromocode.name}}"></a>
+              </div>
+              <div class="col_8 col_md_9 product_right">
+                <h3 class="product_name" title="{{relPromocode.name}}"><a href="/promocode?id={{relPromocode._id}}">{{relPromocode.name}}</a></h3>
+                <div class="row" style="align-items: center;color: #444">
+                  <div class="col_12 col_sm">
+                    {{langs.launch_date}}: {{relPromocode.date_start}}<br>
+                    {{langs.end_date}}: {{relPromocode.date_end || langs.not_specified}}<br>
+                    <strong>{{langs.promocode}}: <span class="color_blue" style="font-size: 16px;">{{relPromocode.promocode || langs.not_needed}}</span></strong>
+                  </div>
+                  <div class="col_12 col_sm_auto">
+                    <a href="{{relPromocode.gotolink}}" rel="nofollow" target="_blank" class="btn btn_success" style="margin: 10px 0">{{langs.goto_promo}}</a>
+                  </div>
+                </div>
+             </div>
+            </div>
+            {% endfor %}
+
+        </div>
+      </div>
+      {% endif %}
+
+
+
+
+      <h2 class="shop_desc_title"><i class="fa fa-info-circle"></i> {{langs.shop_title_1}} {{store.name}} {{langs.shop_title_2}}</h2>
+
+<div class="toggle_list">
+<div class="toggle_title ">
+<h3><i></i><span class="title_name">{{langs.shop_information}} {{store.name}}</span></h3>
+</div>
+<div class="toggle_inner">
+<p>
+{% autoescape false %}
+{{store.desc}}
+{% endautoescape %}</p>
+</div>
+</div>
+
+<div class="toggle_list">
+<div class="toggle_title ">
+<h3><i></i><span class="title_name">{{langs.official_website}} {{store.name}}</span></h3></div>
+<div class="toggle_inner">
+<p><div align="center"><a href="{{store.url}}?subid1={{store._id}}&subid2=1" rel="nofollow" target="_blank" title="{{langs.official_website}} {{store.name}}" class="btn btn_success shop_buy">{{langs.official_website}} &raquo;</a></div></p>
+</div>
+</div>
+
+
+<div class="toggle_list">
+<div class="toggle_title ">
+<h3><i></i><span class="title_name">{{store.name}} {{langs.pesonal_cabinet_offers}}</span></h3></div>
+<div class="toggle_inner">
+<p>{{langs.pesonal_cabinet_offers1}} {{store.name}}, {{langs.pesonal_cabinet_offers2}}. {{langs.pesonal_cabinet_offers3}} {{store.name}} {{langs.pesonal_cabinet_offers4}}.</p><br /><p>
+<div align="center">
+<a href="{{store.url}}?subid1={{store._id}}&subid2=1" rel="nofollow" target="_blank" title="{{langs.pesonal_cabinet_offers}} {{store.name}}" class="btn btn_success shop_buy">{{langs.pesonal_cabinet_offers}} &raquo;</a></div>
+</p>
+</div>
+</div>
+
+
+<div class="toggle_list"><div class="toggle_title "><h3><i></i><span class="title_name">{{store.name}} {{langs.black_friday}}</span></h3></div>
+<div class="toggle_inner"><p><div align="center"><a href="{{store.url}}?subid1={{store._id}}&subid2=1" rel="nofollow" target="_blank" title="{{langs.black_friday}} {{store.name}}" class="btn btn_success shop_buy">{{langs.black_friday}} &raquo;</a></div></p>
+</div></div>
+
+
+<div class="toggle_list"><div class="toggle_title ">
+<h3><i></i><span class="title_name">{{langs.how_to_pay_for_an_order}}</span></h3></div>
+<div class="toggle_inner"><p>{{langs.how_to_pay_for_an_order1}} {{store.name}} {{langs.how_to_pay_for_an_order2}} {{store.name}}. {{langs.how_to_pay_for_an_order3}} {{store.name}} {{langs.how_to_pay_for_an_order4}} {{store.name}}, {{langs.how_to_pay_for_an_order5}}.</p><br /></div>
+</div>
+
+
+
+<div class="toggle_list">
+<div class="toggle_title ">
+<h3><i></i><span class="title_name">{{langs.more_about_cashback}}</span></h3>
+</div>
+<div class="toggle_inner">
+<p>
+{% if lang === 2 %}
+<div class="infobar yellow fixed show"><i>Cashback may depend on product category and account type on our site {{configs.siteName}}. The higher the account type, the higher the reward percentage you will receive.</i></div>
+{% elseif lang === 1 %}
+<div class="infobar yellow fixed show"><i>Кешбек може залежати від категорії товару на сайті {{store.name}}, і додатково від типу облікового запису на нашому сайті {{configs.siteName}}. Чим вищий тип облікового запису, тим більший відсоток винагороди від кешбеку Ви отримаєте.</i></div>
+{% endif %}
+</p>
+</div>
+</div>
+
+
+
+
+<!--
+ <a href="{{store.url}}?subid1={{store._id}}&subid2=1" rel="nofollow" target="_blank" title="{{langs.goto_shop}} {{store.name}}"><img class="shop_logo" src="/img/stores/{{store.picture}}"></a>
+ -->
+
+
+
+
+
+    </div>
+
+  </div>
+</div>
+{% include "footer.html" %}

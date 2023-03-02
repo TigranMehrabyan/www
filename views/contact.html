@@ -1,0 +1,27 @@
+{% include "header.html" %}
+<div class="container">
+
+  {% include "navbar.html" %}
+
+{% if lang === 3 %}
+     <div class="row">
+  	<div class="col_12 col_md_7 contact_us_left">По всем вопросам, связанным с кэшбэк-сервисом {{configs.siteName}}, обращайтесь в нашу техническую поддержку по электронной почте:<br><br><a href="mailto:{{configs .supportMail}}"><img src="/img/message_icon.png"> {{configs.supportMail}}</a></div>
+  	<div class="col_12 col_md_5 contact_us_right"><img src="/img/contact_us_icon.png"></div>
+  </div>
+{% endif %}
+
+  {% if lang === 2 %}
+     <div class="row">
+  	<div class="col_12 col_md_7 contact_us_left">For all questions related to the {{configs.siteName}} cashback service, contact our technical support e-mail:<br><br><a href="mailto:{{configs.supportMail}}"><img src="/img/message_icon.png"> {{configs.supportMail}}</a></div>
+  	<div class="col_12 col_md_5 contact_us_right"><img src="/img/contact_us_icon.png"></div>
+  </div>
+
+  {% elseif lang === 1 %}
+  <div class="row">
+  	<div class="col_12 col_md_7 contact_us_left">З усіх питань, пов'язаних з кешбек-сервісом {{configs.siteName}}, звертайтесь на пошту нашої технічної підтримки:<br><br><a href="mailto:{{configs.supportMail}}"><img src="/img/message_icon.png"> {{configs.supportMail}}</a></div>
+  	<div class="col_12 col_md_5 contact_us_right"><img src="/img/contact_us_icon.png"></div>
+  </div>
+{% endif %}
+
+</div>
+{% include "footer.html" %}

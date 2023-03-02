@@ -1,0 +1,39 @@
+
+sudo apt update
+
+sudo apt install curl
+
+# установка nodejs
+sudo curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt install nodejs
+
+# установка pm2 модуля для запуска сервера
+sudo npm i pm2 -g
+
+# заходит в расположение файлов скрипта
+cd /home/cashback
+
+# установка модулей скрипта
+sudo npm install
+
+# если ошибка установки модуля sharp, выполняем это команду
+sudo npm install --unsafe-perm sharp
+
+# команда запускает сервер сайта
+sudo npm start
+
+sudo pm2 save
+
+sudo pm2 startup
+
+# установка ssl
+sudo apt install -y certbot
+
+# выполняем команду и следуем иснтрукции в терминале для установки ssl
+sudo certbot certonly --webroot
+
+# после успешной установки sll открываем файл bin/www
+# раскомментируем строку - process.env.NODE_ENV = "production";
+# меняем app.set('port', 80); на app.set('port', 443);
+# перезапусакем сервер
+sudo pm2 update 0

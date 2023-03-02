@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+//process.env.NODE_ENV = "production";
+
+const app = require('../app');
+
+app.listen(3000, '127.1.0.32');

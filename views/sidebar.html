@@ -1,0 +1,30 @@
+{% if categories %}
+<div class="right_menu">
+  <ul id="rightMenu">
+    {% for ctgr in categories %}
+    <li>
+    	<a href="/{{categoryPath}}?category={{ctgr._id}}"><i class="fa fa-{{ctgr.icon}}"></i>{{ctgr.name}}</a>
+    	{% if ctgr.childs.length %}
+    	<span id="openChildMenu"><i class="fa fa-angle-down{% if categoryId === ctgr._id || categoryParentId === ctgr._id %} rotate{% endif %}"></i></span>
+    	{% if categoryId === ctgr._id || categoryParentId === ctgr._id %}<ul style="display: block;">{% else %}<ul>{% endif %}
+    	{% for child in ctgr.childs %}
+    	<li>
+    		<a href="/{{categoryPath}}?category={{child._id}}"><i class="fa fa-circle"></i>{{child.name}}</a>
+    	</li>
+    	{% endfor %}
+    	</ul>
+    	{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+
+<div class="right_advertise">
+<p><a href="https://ad.admitad.com/g/gx9srs78rn7a378963b946c8ade4bf/?subid=promocash-right"><img src="/img/eneba.png"></a></p>
+</div>
+
+<div class="right_advertise">
+<p><a href="https://ad.admitad.com/g/li9cpnze91c21fc133563fb16fb13c/?subid=promocash-right"><img src="/img/varus.jpg"></a></p>
+</div>

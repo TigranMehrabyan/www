@@ -1,0 +1,123 @@
+{% include "header.html" %}
+<div class="container">
+
+  {% include "navbar.html" %}
+
+
+<div class="howitworks">
+
+{% if lang === 3 %}
+<div class="row">
+<div class="col_12 col_sm_10 howitworks_cont">
+<h3>Что такое кэшбэк?</h3>
+Кэшбэк — это возврат части денег, потраченных в интернет-магазинах. В каждом магазине свои условия. Некоторые возвращают процент от покупки, а другие возвращают фиксированную сумму. Покупать в Интернете так же просто, как и раньше, но теперь еще дешевле.
+</div>
+<div class="col_12 col_sm_2"><img src="/img/howitworks_1.png"></div>
+</div>
+<div class="row">
+<div class="col_12 col_sm_3"><img src="/img/howitworks_2.png"></div>
+<div class="col_12 col_sm_9 howitworks_cont">
+<h3>Как работает кэшбэк?</h3>
+<ul>
+<li>Зарегистрировавшись на {{configs.siteName}} вы получите свой личный аккаунт.</li>
+<li>После этого выберите <a href="https://promocash.pro/shops">нужный магазин из списка</a> и перейдите на сайт выбранного магазина.</li>
+<li>Вы совершаете покупку и оплачиваете ее.</li>
+<li>Магазин получает от вас оплату, отправляет вам товар и платит нам комиссию за привлечение покупателя.</li>
+<li>Часть этой суммы мы оплачиваем Вам.</li>
+</ul>
+</div>
+</div>
+<div class="row">
+<div class="col_12 col_sm_9 howitworks_cont">
+<strong>Кэшбэк начисляется за каждую покупку, но для этого необходимо соблюдение всех условий:</strong><br>
+<ul>
+<li>Всегда заходите на сайт магазина, нажав кнопку "Купить с кэшбэком" на нашем сайте - за прямые покупки в магазине кэшбэк не выплачивается.</li>
+<li>Вы должны забрать и оплатить товар в интернет-магазине в пункте выдачи. Это ускорит начисление кэшбэка.</li>
+<li>Совершайте покупки только в Интернете на нашем сайте. Заказы по телефону не учитываются и кэшбэк не начисляется.</li>
+<li>Не отказывайтесь от заказа даже частично - деньги списываются только за все купленные товары, вычитается стоимость возвращенного товара. Лучше сделать повторный заказ.</li>
+</ul>
+</div>
+<div class="col_12 col_sm_3"><img src="/img/howitworks_3.png"></div>
+</div>
+
+ {% endif %}
+
+
+
+{% if lang === 2 %}
+<div class="row">
+<div class="col_12 col_sm_10 howitworks_cont">
+<h3>What is cashback?</h3>
+Cashback is the return of part of the money spent in online stores. Each store has its own conditions. Some return a percentage of the purchase, while others return a fixed amount. Shopping online is as easy as ever, but now even cheaper.
+</div>
+<div class="col_12 col_sm_2"><img src="/img/howitworks_1.png"></div>
+</div>
+<div class="row">
+<div class="col_12 col_sm_3"><img src="/img/howitworks_2.png"></div>
+<div class="col_12 col_sm_9 howitworks_cont">
+<h3>How does cashback work?</h3>
+<ul>
+<li>By registering at {{configs.siteName}} you get your personal account.</li>
+<li>After that, select <a href="https://promocash.pro/shops">the required store from the list</a> and go to the site of the selected store.</li>
+<li>You make a purchase and pay for it.</li>
+<li>The store receives payment from you, sends you the product and pays us a commission for bringing them a customer.</li>
+<li>We charge part of this amount to you.</li>
+</ul>
+</div>
+</div>
+<div class="row">
+<div class="col_12 col_sm_9 howitworks_cont">
+<strong>Cashback is credited for each purchase, but this requires compliance with all conditions:</strong><br>
+<ul>
+<li>Always go to the store website by clicking the "Buy with cashback" button on our website - cashback is not paid for direct purchases in the store.</li>
+<li>You must pick up and pay for your product from the online store at the drop-off point. This will accelerate the accrual of cashback.</li>
+<li>Make your purchases only online through our site. Phone orders are not taken into account and cashback is not accrued.</li>
+<li>Do not refuse the order even partially - money is charged only for all purchased items, the cost of returned goods is deducted. Better make a reorder.</li>
+</ul>
+</div>
+<div class="col_12 col_sm_3"><img src="/img/howitworks_3.png"></div>
+</div>
+
+
+
+
+{% elseif lang === 1 %}
+
+<div class="row">
+<div class="col_12 col_sm_10 howitworks_cont">
+<h3>Що таке кешбек?</h3>
+Кешбек це повернення частини грошей, витрачених в інтернет-магазинах. Кожен магазин має свої умови. Одні повертають відсоток від покупки, а інші – фіксовану суму. Купувати в інтернет-магазинах так само легко, як і раніше, але тепер ще набагато дешевше.
+</div>
+<div class="col_12 col_sm_2"><img src="/img/howitworks_1.png"></div>
+</div>
+<div class="row">
+<div class="col_12 col_sm_3"><img src="/img/howitworks_2.png"></div>
+<div class="col_12 col_sm_9 howitworks_cont">
+<h3>Як працює кешбек?</h3>
+<ul>
+<li>Зареєструючись на {{configs.siteName}} ви отримуєте свій особистий кабінет.</li>
+<li>Після чого вибираєте <a href="https://promocash.pro/shops">зі списку необхідний магазин</a> і переходите на сайт вибраного магазину.</li>
+<li>Ви робите покупку та оплачуєте її.</li>
+<li>Магазин отримує від Вас оплату, відправляє Вам товар і виплачує нам комісійні за те, що ми привели їм покупця.</li>
+<li>Ми нараховуємо частину цієї суми Вам.</li>
+</ul>
+</div>
+</div>
+<div class="row">
+<div class="col_12 col_sm_9 howitworks_cont">
+<strong>Кешбек нараховується за кожну покупку, але для цього потрібне дотримання всіх умов:</strong><br>
+<ul>
+<li>Завжди переходити на сайт магазину, натискаючи на нашому сайті кнопку «Купити з кешбеком» – за прямі покупки в магазині кешбек не виплачується.</li>
+<li>Ви маєтете забрати та оплатити свій товар від інтернет-магазину у пункті видачі. Це прискорить нарахування кешбеку.</li>
+<li>Робіть свої покупки тільки онлайн через наш сайт. Замовлення по телефону не враховуються і кешбек не нараховується.</li>
+<li>Не відмовлятися від замовлення навіть частково – гроші нараховуються лише за всі викуплені позиції, вартість повернутих товарів віднімається. Краще зробіть перезамовлення.</li>
+</ul>
+</div>
+<div class="col_12 col_sm_3"><img src="/img/howitworks_3.png"></div>
+</div>
+
+
+{% endif %}
+
+ </div></div>
+{% include "footer.html" %}

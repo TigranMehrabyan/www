@@ -1,0 +1,72 @@
+{% include "header.html" %}
+
+<div class="container">
+  <div class="row">
+    <div class="col_12 document_page">
+
+      {% include "navbar.html" %}
+
+      <h2><i class="fa fa-folder-open"></i> {{langs.hot_deals}} 2023</h2>
+
+     <!--  <table class="sorting">
+        <thead class="sortable">
+          <tr>
+            <th class="nosort d_none d_lg_block">{{langs.sort_by}}</th>
+            <th>{{langs.sort_name}}</th>
+            <th class="defsort">{{langs.sort_by_start}}</th>
+            <th>{{langs.sort_by_end}}</th>
+            <th>{{langs.sort_by_discount}}</th>
+          </tr>
+        </thead>
+      </table>   -->
+
+
+      <div class="row">
+        {% if catgoryDesc %}<div class="page_bottom_desc">{{catgoryDesc}}</div>{% endif %}
+        {% if empty %}
+          <div class="empty_list">{{langs.empty_list}}</div>
+        {% elseif searchError %}
+          <div id="infoBar" class="infobar error fixed show" style="width:100%">{{langs.info_search_grt_then}}</div>
+        {% elseif searchEmpty %}
+          <div id="infoBar" class="infobar error fixed show" style="width:100%">{{langs.info_search_empty}}</div>
+        {% else %}
+        {% for promocode in promocodes %}
+
+        <div class="row product_item promocode">
+          <div class="col_4 col_md_3 product_image" style="display: flex;align-items: center;">
+            <a href="/promocode?id={{promocode._id}}"><img src="{{promocode.logo}}" title="{{promocode.name}}"></a>
+          </div>
+          <div class="col_8 col_md_9 product_right">
+  	        <h3 class="product_name" title="{{promocode.name}}"><a href="/promocode?id={{promocode._id}}">{{promocode.name}}</a></h3>
+  	        <div class="row" style="align-items: center;color: #444">
+              <div class="col_sm">
+                {{langs.launch_date}}: {{promocode.date_start}}<br>
+                {{langs.end_date}}: {{promocode.date_end || langs.not_specified}}<br>
+				
+				<a class=" btn btn_success coupon-action-button header-alike col_8 col_md_9" href="/promocode?id={{promocode._id}}"><span class="code-text">{{langs.info_open_cod}}</span><span class="partial-code">&nbsp;{{promocode.promocode || langs.not_needed}}</span></a>
+				
+				
+                
+				
+				<!--<strong>{{langs.promocode}}: <span class="color_blue" style="font-size: 16px;">{{promocode.promocode || langs.not_needed}}</span></strong>-->
+              </div>
+			  <!--
+  		        <div class="col_12 col_sm_auto">
+                <a href="{{promocode.gotolink}}" rel="nofollow" target="_blank" class="btn btn_success" style="margin: 10px 0">{{langs.goto_promo}}</a>
+              </div>
+			  -->
+  	        </div>
+  	     </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+      </div>
+
+
+      {% include "pagination.html" %}
+    </div>
+
+  </div>
+</div>
+{% include "footer.html" %}

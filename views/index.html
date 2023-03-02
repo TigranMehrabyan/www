@@ -1,0 +1,306 @@
+{% include "header.html" %}
+<div class="container_fluid top_welcome_box">
+  <div class="container">
+<!--    <h3 class="top_welcome_text">{{langs.welbox_title}} {{configs.siteName}}</h3> -->
+    <div class="row welcome_box">
+
+        <div class="col_12 col_sm_6 col_lg_3">
+          <div class="welcome_box_icon">
+            <i class="fa fa-shopping-cart"></i>
+          </div>
+          <div class="welcome_box_text">
+            <h4>{{langs.welbox_1_1}}</h4>
+            <p>{{langs.welbox_1_2}}</p>
+          </div>
+        </div>
+
+
+        <div class="col_12 col_sm_6 col_lg_3">
+          <div class="welcome_box_icon">
+            <i class="fa fa-shopping-basket"></i>
+          </div>
+          <div class="welcome_box_text">
+            <h4>{{langs.welbox_2_1}}</h4>
+            <p>{{langs.welbox_2_2}}</p>
+          </div>
+        </div>
+
+
+        <div class="col_12 col_sm_6 col_lg_3">
+          <div class="welcome_box_icon">
+            <i class="fa fa-hand-holding-usd"></i>
+          </div>
+          <div class="welcome_box_text">
+            <h4>{{langs.welbox_3_1}}</h4>
+            <p>{{langs.welbox_3_2}}</p>
+          </div>
+        </div>
+
+
+        <div class="col_12 col_sm_6 col_lg_3">
+          <div class="welcome_box_icon">
+            <i class="fa fa-money-check-alt"></i>
+          </div>
+          <div class="welcome_box_text">
+            <h4>{{langs.welbox_4_1}}</h4>
+            <p>{{langs.welbox_4_2}}</p>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div style="margin-bottom: 20px">
+    <a href="https://promocash.pro/shop?id=67Hm7OPbctziAJeT"><img src="/img/slide_2.jpg?v=2" style="width: 100%;"></a>
+  </div>
+
+  <!--
+  <div data-fadeshow="quick-nav prev-next-nav slide-counter autoplay ken-burns">
+
+    {% if discounts.0 %}
+    <input type="radio" name="css-fadeshow" id="fs-slide-1" />
+    {% endif %}
+    <input type="radio" name="css-fadeshow" id="fs-slide-2" />
+
+
+    <div class="fs-slides">
+
+      {% if discounts.0 %}
+      <div class="fs-slide">
+        <div class="fs-slide-bg" style="background-image:url(/img/slide_1.jpg)"></div>
+        <div class="slide-content slide-content-1">
+          <h1>{{langs.cashback}} + 50 %</h1>
+          <p>{{langs.discount_desc_1}}</p>
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="fs-slide">
+        <div class="fs-slide-bg" style="background-image:url(/img/slide_2.jpg?v=1)"></div>
+        <div class="slide-content slide-content-2">
+          <h1></h1>
+          <p>{{langs.slide_desc_1}}</p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="fs-quick-nav">
+      {% if discounts.0 %}
+      <label class="fs-quick-btn" for="fs-slide-1"></label>
+      {% endif %}
+      <label class="fs-quick-btn" for="fs-slide-2"></label>
+    </div>
+
+
+    <div class="fs-prev-nav">
+      {% if discounts.0 %}
+      <label class="fs-prev-btn" for="fs-slide-1"></label>
+      {% endif %}
+      <label class="fs-prev-btn" for="fs-slide-2"></label>
+    </div>
+
+
+    <div class="fs-next-nav">
+      {% if discounts.0 %}
+      <label class="fs-next-btn" for="fs-slide-1"></label>
+      {% endif %}
+      <label class="fs-next-btn" for="fs-slide-2"></label>
+    </div>
+
+
+    <div class="fs-slide-counter">
+      <span class="fs-slide-counter-current"></span>/<span class="fs-slide-counter-total"></span>
+    </div>
+
+  </div>-->
+
+
+
+</div>
+
+<div class="container">
+  <div class="row shops_middle">
+    <div class="col_12 shops_content main_page">
+
+      {% include "noverified.html" %}
+
+      <h2><i class="fa fa-certificate"></i> {{langs.top_cashback_shops}}</h2>
+
+      <div class="row shops_list">
+
+        {% if empty %}
+          <div class="empty_list">{{langs.empty_list}}</div>
+        {% else %}
+        {% for store in stores %}
+        <div class="shop_item">
+          <a href="/shop?id={{store._id}}">
+            <div class="shop_image"><img src="/img/stores/{{store.picture}}"></div>
+            <h3 class="shop_name">{{store.name}}</h3>
+            <div class="shop_info">
+              {% if store.discount_cashback %}
+              <strong><del>{{store.cashback}}</del><br>{{store.discount_cashback}}</strong>
+              {% else %}
+              <strong>{{store.cashback}}</strong>
+              {% endif %}
+              <br>{{langs.cashback}}
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+      </div>
+
+
+
+
+
+               {% if lang === 3 %}
+     <h2><i class="fa fa-certificate"></i> Кэшбэк и Промокоды 2023 года</h2>
+       <div class="howitworks">
+	  <div class="row">
+		<div align="justify">
+<h3>Что такое кэшбэк?</h3>
+Кэшбэк — это возврат части денег, потраченных вами в интернет-магазинах. В каждом магазине свои условия. Некоторые возвращают процент от покупки, а другие возвращают фиксированную сумму. Покупать в интернет-магазинах так же просто, как и раньше, а теперь еще выгоднее.
+</div>
+
+</div>
+<div class="row">
+<div class="col_12 col_sm_3"><img src="/img/howitworks_2.png"></div>
+<div class="col_12 col_sm_9 howitworks_cont">
+<h3>Как работает кэшбэк?</h3>
+<ul>
+<li>Зарегистрировавшись на {{configs.siteName}}, вы получите свой личный аккаунт.</li>
+<li>Затем выберите нужный магазин из списка и перейдите в него.</li>
+<li>Вы совершаете покупку и платите магазину розничную цену товара.</li>
+<li>Магазин платит нам комиссию за привлечение покупателя.</li>
+<li>Часть этой суммы мы списываем с вас.</li>
+</ul>
+</div>
+</div>
+<div class="row">
+<div class="col_12 col_sm_9 howitworks_cont">
+<strong>Кэшбэк начисляется за каждую покупку, но для этого необходимо соблюдение всех условий:</strong><br>
+<ul>
+<li>Всегда заходите на сайт магазина, нажав на кнопку "Купить с кэшбэком" - за прямые покупки деньги не возвращаются.</li>
+<li>Как быстрее получить и оплатить товар в пункте выдачи и подтвердить доставку в личном кабинете. Это ускорит начисление кэшбэка.</li>
+<li>Совершайте покупки только в Интернете. Заказы по телефону не учитываются.</li>
+<li>Не отказывайтесь от заказа даже частично - деньги списываются только за купленный товар, вычитается стоимость возвращенного товара.</li>
+		</ul>
+		</div>
+		<div class="col_12 col_sm_3"><img src="/img/howitworks_3.png"></div>
+	  </div>
+  </div>
+
+
+
+          {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+               {% if lang === 2 %}
+     <h2><i class="fa fa-certificate"></i> Cashback and Promo codes of 2023</h2>
+       <div class="howitworks">
+	  <div class="row">
+		<div align="justify">
+<h3>What is cashback?</h3>
+Cashback is the return of part of the money spent by you in online stores. Each store has its own conditions. Some return a percentage of the purchase, while others return a fixed amount. Shopping in online stores is as easy as before, but now even more profitable.
+</div>
+
+</div>
+<div class="row">
+<div class="col_12 col_sm_3"><img src="/img/howitworks_2.png"></div>
+<div class="col_12 col_sm_9 howitworks_cont">
+<h3>How does cashback work?</h3>
+<ul>
+<li>By registering at {{configs.siteName}} you get your personal account.</li>
+<li>Then select the required store from the list and go to it.</li>
+<li>You make a purchase and pay the retail price of the product to the store.</li>
+<li>The store pays us a commission for bringing them a customer.</li>
+<li>We charge part of this amount to you.</li>
+</ul>
+</div>
+</div>
+<div class="row">
+<div class="col_12 col_sm_9 howitworks_cont">
+<strong>Cashback is credited for each purchase, but this requires compliance with all conditions:</strong><br>
+<ul>
+<li>Always go to the store website by clicking on the "Buy with cashback" button - money is not returned for direct purchases.</li>
+<li>How to receive and pay for goods faster at the delivery point and confirm delivery in your personal account. This will accelerate the accrual of cashback.</li>
+<li>Make purchases online only. Phone orders are not taken into account.</li>
+<li>Do not refuse the order even partially - money is charged only for purchased items, the cost of returned goods is deducted.</li>
+		</ul>
+		</div>
+		<div class="col_12 col_sm_3"><img src="/img/howitworks_3.png"></div>
+	  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+          {% elseif lang === 1 %}
+
+
+            <h2><i class="fa fa-certificate"></i> Кешбек та Промокоди 2023 року</h2>
+       <div class="howitworks">
+	  <div class="row">
+		<div align="justify">
+<h3>Що таке кешбек?</h3>
+Кешбек - це повернення частини грошей, витрачених Вами в інтернет-магазинах. Кожен магазин має свої умови. Одні повертають відсоток від покупки, а інші – фіксовану суму. Купувати в інтернет-магазинах так само легко, як і раніше, але тепер ще набагато вигідніше.
+</div>
+
+</div>
+<div class="row">
+<div class="col_12 col_sm_3"><img src="/img/howitworks_2.png"></div>
+<div class="col_12 col_sm_9 howitworks_cont">
+<h3>Як працює кешбек?</h3>
+<ul>
+<li>Зареєструючись на {{configs.siteName}} ви отримуєте свій особистий кабінет.</li>
+<li>Після чого вибираєте зі списку необхідний магазин і переходите до нього.</li>
+<li>Ви робите покупку та виплачуєте магазину роздрібну вартість товару.</li>
+<li>Магазин виплачує нам комісійні за те, що ми привели їм покупця.</li>
+<li>Ми нараховуємо частину цієї суми Вам.</li>
+</ul>
+</div>
+</div>
+<div class="row">
+<div class="col_12 col_sm_9 howitworks_cont">
+<strong>Кешбек нараховується за кожну покупку, але для цього потрібне дотримання всіх умов:</strong><br>
+<ul>
+<li>Завжди переходити на сайт магазину, натискаючи на кнопку «Купити з кешбеком» – за прямі покупки гроші не повертаються.</li>
+<li>Як можна швидше отримувати та оплачувати товар у пункті видачі та підтверджувати доставку в особистому кабінеті. Це прискорить нарахування кешбеку.</li>
+<li>Робити покупки тільки онлайн. Замовлення по телефону не враховуються.</li>
+<li>Не відмовлятися від замовлення навіть частково – гроші нараховуються лише за викуплені позиції, вартість повернутих товарів віднімається.</li>
+		</ul>
+		</div>
+		<div class="col_12 col_sm_3"><img src="/img/howitworks_3.png"></div>
+	  </div>
+  </div>
+
+
+
+          {% endif %}
+
+    </div>
+
+  </div>
+</div>
+{% include "footer.html" %}

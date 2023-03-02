@@ -1,0 +1,210 @@
+{% include "header.html" %}
+
+<div class="container">
+
+  {% include "navbar.html" %}
+
+  <div class="faq">
+
+
+{% if lang === 3 %}
+
+
+
+  <div class="toggle_list">
+<div class="toggle_title">
+<h3>
+<i></i>
+<span class="title_name">Что такое кэшбэк?</span>
+</h3>
+</div>
+<div class="toggle_inner">
+<p>Кэшбэк — это возврат части денег, потраченных при покупке товаров или услуг в интернет-магазинах.</p>
+</div>
+</div>
+<div class="toggle_list">
+<div class="toggle_title">
+<h3>
+<i></i>
+<span class="title_name">Откуда берется кэшбэк?</span>
+</h3>
+</div>
+<div class="toggle_inner">
+<p>Магазин, в котором была совершена покупка, платит нам комиссию за привлечение покупателя, и мы оплачиваем часть этой суммы для Вас.</p>
+</div>
+</div>
+<div class="toggle_list">
+<div class="toggle_title">
+<h3>
+<i></i>
+<span class="title_name">Как купить и получить кэшбэк?</span>
+</h3>
+</div>
+<div class="toggle_inner">
+<p>Для получения кэшбэка <strong>необходимо авторизоваться</strong> на {{configs.siteName}} и <strong>обязательно перейти на сайт магазина, нажав кнопку "Купить с кэшбэком"</strong>. Кэшбэк не начисляется за прямые покупки.
+Начисление кэшбэка — технически сложный процесс, в котором участвуют покупатель, несколько компаний и ряд компьютерных программ, чувствительных к порядку действий, выполняемых при оформлении заказа. Поэтому для покупок с кэшбэком лучше использовать чистый браузер, в котором ничего не установлено.<br><br>
+
+При использовании скидок, купонов и промокодов не с нашего сайта интернет-магазины отклоняют расчет вознаграждения, с которого выплачивается кэшбэк. Для того, чтобы интернет-магазины начисляли вознаграждение, с которого выплачивается кэшбэк, не оформляйте заказ через их мобильные приложения. И обратите внимание, что вознаграждение, с которого выплачивается кэшбэк, применяется только к товарам, добавленным в корзину ПОСЛЕ выхода с сайта {{configs.siteName}}.<br><br>
+Обратите внимание, магазин не начисляет вознаграждение, из которого выплачивается кэшбэк при оформлении и оплате заказа юридическими лицами (организациями и предприятиями).</p>
+</div>
+</div>
+<div class="toggle_list">
+<div class="toggle_title">
+<h3>
+<i></i>
+<span class="title_name">Какова минимальная сумма вывода?</span>
+</h3>
+</div>
+<div class="toggle_inner">
+<p>Минимальная сумма вывода: {{configs.minPayout}} {{langs.currency_d}} {{langs.or}} {{configs.minPayout_r}} {{langs.currency_r}}</p>
+</div>
+</div>
+<div class="toggle_list">
+<div class="toggle_title">
+<h3>
+<i></i>
+<span class="title_name">Сколько ждать подтверждения кэшбэка?</span>
+</h3>
+</div>
+<div class="toggle_inner">
+<p>Подтверждение кэшбэка происходит после передачи информации от интернет-магазина о получении товара покупателем или выполнении заказа. {{configs.siteName}} не может влиять на скорость подтверждения кэшбэка.
+<br>Средний и максимальный период подтверждения кэшбэка вы можете узнать на странице интересующего вас магазина.</p>
+</div>
+</div>
+    {% endif %}
+
+
+  {% if lang === 2 %}
+
+ 	<div class="toggle_list">
+		<div class="toggle_title ">
+			<h3>
+			<i></i>
+			<span class="title_name">What is cashback?</span>
+			</h3>
+		</div>
+		<div class="toggle_inner">
+			<p>Cashback is the return of part of the money spent when buying goods or services in online stores.</p>
+		</div>
+	</div>
+	<div class="toggle_list">
+		<div class="toggle_title ">
+			<h3>
+			<i></i>
+			<span class="title_name">Where does the cashback come from?</span>
+			</h3>
+		</div>
+		<div class="toggle_inner">
+			<p>The store where the purchase was made pays us a commission for bringing them a customer, and we charge a portion of that amount to you.</p>
+		</div>
+	</div>
+	<div class="toggle_list">
+		<div class="toggle_title ">
+			<h3>
+			<i></i>
+			<span class="title_name">How to buy and receive cashback?</span>
+			</h3>
+		</div>
+		<div class="toggle_inner">
+			<p>To receive cashback, <strong>be sure to log in</strong> to {{configs.siteName}} and <strong>be sure to go to the store site by clicking on the "Buy with cashback" button</strong>. Cashback is not accrued for direct purchases.
+Cashback accrual is a technically complex process that involves the buyer, several companies, and a number of computer programs sensitive to the order of actions performed during the order placement. Therefore, for purchases with cashback, it is better to use a clean browser in which nothing is installed.<br><br>
+
+			When using discounts, coupons and promotional codes not from our site, online stores reject the calculation of the reward from which the cashback is paid. In order for online stores to charge a reward from which cashback is paid, do not place an order through their mobile applications. And please note that the reward from which the cashback is paid is only applied to items added to the cart AFTER leaving the site {{configs.siteName}}.<br><br>
+Please note that the store does not charge a reward from which cashback is paid when placing and paying for an order by legal entities (organizations and enterprises).</p>
+		</div>
+	</div>
+	<div class="toggle_list">
+		<div class="toggle_title ">
+			<h3>
+			<i></i>
+			<span class="title_name">What is the minimum withdrawal amount?</span>
+			</h3>
+		</div>
+		<div class="toggle_inner">
+			<p>The minimum withdrawal amount is {{configs.minPayout}} {{langs.currency_d}} {{langs.or}} {{configs.minPayout_r}} {{langs.currency_r}}</p>
+		</div>
+	</div>
+	<div class="toggle_list">
+		<div class="toggle_title ">
+			<h3>
+			<i></i>
+			<span class="title_name">How long to wait for cashback confirmation?</span>
+			</h3>
+		</div>
+		<div class="toggle_inner">
+			<p>Confirmation of cashback occurs after the transfer of information from the online store about the receipt of the goods by the buyer or completion of the order. {{configs.siteName}} cannot affect cashback confirmation speed.
+<br>You can find out the average and maximum cashback confirmation period on the page of the store you are interested in.</p>
+		</div>
+	</div>
+
+
+
+
+
+
+  {% elseif lang === 1 %}
+
+	<div class="toggle_list">
+		<div class="toggle_title ">
+			<h3>
+			<i></i>
+			<span class="title_name">Що таке кешбек?</span>
+			</h3>
+		</div>
+		<div class="toggle_inner">
+			<p>Кешбек – повернення частини грошей, витрачених при купівлі товарів або послуг в інтернет-магазинах.</p>
+		</div>
+	</div>
+	<div class="toggle_list">
+		<div class="toggle_title ">
+			<h3>
+			<i></i>
+			<span class="title_name">Звідки береться кешбек?</span>
+			</h3>
+		</div>
+		<div class="toggle_inner">
+			<p>Магазин, в якому зроблено покупку, виплачує нам комісійні за те, що привели їм покупця, а ми нараховуємо частину цієї суми вам.</p>
+		</div>
+	</div>
+	<div class="toggle_list">
+		<div class="toggle_title ">
+			<h3>
+			<i></i>
+			<span class="title_name">Як правильно купувати та отримувати кешбек?</span>
+			</h3>
+		</div>
+		<div class="toggle_inner">
+			<p>Для отримання кешбеку <strong>обов'язково авторизуйтесь</strong> на {{configs.siteName}} і <strong>обов'язково переходьте на сайт магазину, натискаючи на кнопку «Купити з кешбеком»</strong>. За прямі покупки кешбек не нараховується.
+Нарахування кешбеку — технічно складний процес, у якому задіяний покупець, кілька компаній та ряд комп'ютерних програм, чутливих до порядку дій, які виконуються під час оформлення замовлення. Тому для покупок з кешбеком краще використовувати чистий браузер, в якому нічого не встановлено.<br><br>
+
+			При використанні знижок, купонів та промокодів не з нашого сайту інтернет-магазини відхиляють нарахування винагороди, з якої виплачується кешбек. Щоб інтернет-магазини нараховували винагороду, з якої виплачується кешбек, не оформлюйте замовлення через їх мобільні програми. І зверніть увагу, що винагорода, з якої виплачується кешбек, нараховується лише на товари, додані в кошик ПІСЛЯ переходу з сайту {{configs.siteName}}.<br><br>
+Зверніть увагу, що магазин не нараховує винагороду, з якої виплачується кешбек, при оформленні та оплаті замовлення юридичними особами (організаціями та підприємствами).</p>
+		</div>
+	</div>
+	<div class="toggle_list">
+		<div class="toggle_title ">
+			<h3>
+			<i></i>
+			<span class="title_name">Яка мінімальна сума виведення?</span>
+			</h3>
+		</div>
+		<div class="toggle_inner">
+			<p>Мінімальна сума для виведення становить {{configs.minPayout}} {{langs.currency_d}} {{langs.or}} {{configs.minPayout_r}} {{langs.currency_r}}</p>
+		</div>
+	</div>
+	<div class="toggle_list">
+		<div class="toggle_title ">
+			<h3>
+			<i></i>
+			<span class="title_name">Як довго чекати на підтвердження кешбеку?</span>
+			</h3>
+		</div>
+		<div class="toggle_inner">
+			<p>Підтвердження кешбеку відбувається після передачі інформації від інтернет-магазину про отримання товару покупцем або завершення замовлення. {{configs.siteName}} не може вплинути на швидкість підтвердження кешбеку.
+<br>Середній і максимальний термін підтвердження кешбеку ви можете дізнатися на сторінці магазину, що вас цікавить.</p>
+		</div>
+	</div>
+     {% endif %}
+  </div>
+</div>
+{% include "footer.html" %}

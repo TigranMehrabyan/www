@@ -1,0 +1,95 @@
+{% include "header.html" %}
+<div class="container">
+
+  {% include "navbar.html" %}
+
+  <div class="row">
+
+    <div class="col_12 col_md_5 col_lg_4 shop_item_lside">
+	
+	  <img class="shop_logo" src="{{product.picture}}">
+
+      <div class="shop_cashback_info">
+        {{langs.price}}: <strong>{{product.price}} {{product.currency}}</strong>
+      </div>
+
+      <a href="{{product.url}}" rel="nofollow" target="_blank" class="btn btn_success shop_buy">{{langs.goto_promo}}</a>
+
+<div align="center"><br /><br /><br />
+<p><a href="https://promocash.pro/shop?id=67Hm7OPbctziAJeT"><img src="/img/ali.png"></a></p>
+</div>
+
+
+    </div>
+
+    <div class="col_12 col_md_7 col_lg_8 shop_item_rside">
+
+      <h1 class="shop_item_title">{{product.name}}</h1>
+      <h2 class="shop_desc_title"><i class="fa fa-info-circle"></i> {{langs.vendor}} - {{product.vendor}}</h2>
+
+
+      {% include "noverified.html" %}
+
+      <div class="shop_description">
+
+        <div class="row">
+       
+        
+              {{product.desc_1}}
+        </div>
+
+      </div>
+
+      {% if relPromocodes %}
+      <div class="shop_related_shops">
+        <h3>{{langs.related_promocodes}}</h3>
+        <div class="row shops_list">
+
+          {% for relPromocode in relPromocodes %}
+          <div class="row product_item promocode">
+            <div class="col_4 col_md_3 product_image" style="display: flex;align-items: center;">
+              <a href="/promocode?id={{relPromocode._id}}"><img src="{{relPromocode.logo}}" title="{{relPromocode.name}}"></a>
+            </div>
+            <div class="col_8 col_md_9 product_right">
+              <h3 class="product_name" title="{{relPromocode.name}}"><a href="/promocode?id={{relPromocode._id}}">{{relPromocode.name}}</a></h3>
+              <div class="row" style="align-items: center;color: #444">
+                <div class="col_12 col_sm">
+                  {{langs.launch_date}}: {{relPromocode.date_start}}<br>
+                  {{langs.end_date}}: {{relPromocode.date_end || langs.not_specified}}<br>
+                  <strong>{{langs.promocode}}: <span class="color_blue" style="font-size: 16px;">{{relPromocode.promocode || langs.not_needed}}</span></strong>
+                </div>
+                <div class="col_12 col_sm_auto">
+                  <a href="{{relPromocode.gotolink}}" rel="nofollow" target="_blank" class="btn btn_success" style="margin: 10px 0">{{langs.goto_promo}}</a>
+                </div>
+              </div>
+           </div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+      {% endif %}
+
+
+
+  
+
+<div class="toggle_list">
+<div class="toggle_title ">
+<h3><i></i><span class="title_name">Детальная информация:</span></h3>
+</div>
+<div class="toggle_inner">
+<p>
+Активируя промокод <strong><a href="{{promocode.gotolink}}" rel="nofollow" target="_blank">{{promocode.promocode}}</a></strong> Вы получите {{pTypes}} на {{promocode.name}}.  {{langs.launch_date}}: {{promocode.date_start}}. {{langs.end_date}}: {{promocode.date_end || langs.not_specified}}. Категория: {{catnames}}. Дополнительные условия: {{promocode.description}}
+
+</p>
+</div>
+</div>
+
+
+
+    </div>
+
+  </div>
+</div>
+{% include "footer.html" %}
